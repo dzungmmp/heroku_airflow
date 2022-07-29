@@ -18,7 +18,7 @@
     }
   },
   "scripts": {
-    "heroku-prebuild": "DATABASE_URL=${DATABASE_URL/postgres/postgresql}",
+    "heroku-prebuild": "DATABASE_URL=${DATABASE_URL/postgres/postgresql} echo $DATABASE_URL",
     "postdeploy": "airflow init db"
   }
 }
