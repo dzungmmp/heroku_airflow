@@ -9,15 +9,16 @@
   ],
   "env": {
     "AIRFLOW__CORE__FERNET_KEY": {
-       "description": "Fernet key to encrypt database.  See README.md for instructions to generate new one.",
-       "value": "<Enter Value>"
+      "description": "Fernet key to encrypt database.  See README.md for instructions to generate new one.",
+      "value": "<Enter Value>"
     },
     "AIRFLOW_HOME": {
-       "description": "Location of AIRFLOW_HOME",
-       "value": "/app"
+      "description": "Location of AIRFLOW_HOME",
+      "value": "/app"
     }
   },
   "scripts": {
+    "heroku-prebuild": "DATABASE_URL=${DATABASE_URL/postgres/postgresql}",
     "postdeploy": "airflow initdb"
   }
 }
